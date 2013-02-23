@@ -22,11 +22,11 @@ tested in iOS6 and Android 4.1.2
 
 ## usage
 
-# add scrollview Object
+### add scrollview Object
 
     scrollView = new $.ScrollView('#scroll-object');
 
-# add pull and finish listener
+### add pull and finish listener
     
     scrollView.on('scrollview.pull',function (e) {
         // do sth when pull
@@ -44,7 +44,7 @@ or listen to dom event of scrollObject.
         scrollView.finishLoading();
     })
 
-# manually control
+### manually control
 
     // manually hide the loading mark
     scrollView.finishLoading();

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,user-scalable=no;"/>
+        <script src="js/zepto.min.js"></script>
+        <script src="src/zepto.ScrollView.js"></script>
+        <title>pull-to-refresh</title>
+        <style>
+            * {margin: 0; padding: 0;}
+            body,html{height:100%;}
+            .main{position: absolute;top:44px;bottom: 0;width: 100%}
+        </style>
+        <link rel="stylesheet" href="css/ratchet.min.css" media="all" />
+        <link rel="stylesheet" href="src/zepto.ScrollView.css" media="all" />
+        <script type="text/javascript">
+
+        if (navigator.userAgent.search('Android')!=-1) {
+        
+        }else{
+          window.addEventListener("touchmove", function(evt) {
+            evt.preventDefault();
+          }, false);
+        }
+        var scrollView;
+        $(function() {
+          scrollView = new $.ScrollView('#scollpane');
+          var done = document.getElementById("done");
+          done.addEventListener('click', function() {
+            scrollView.finishLoading();
+          }, false)
+          var more = document.getElementById("more");
+          more.addEventListener('click', function() {
+            scrollView.startLoading();
+          }, false)
+          scrollView.on('scrollview.pull',function (e) {
+            more.innerHTML = 'loading...';
+            setTimeout(function () {
+              scrollView.finishLoading();
+            }, 2000);
+          })
+          scrollView.on('scrollview.finish',function (e) {
+            more.innerHTML = 'more';
+          })
+        })
+        </script>
+    </head>
+    
+    <body>
+      <view>
+        <header class="bar-title">
+          <a class="button" href="#" id='done'>
+            done
+          </a>
+          <h1 class="title">ScrollView</h1>
+          <a class="button" href="#" id='more'>
+            more
+          </a>
+        </header>
+        <div class="main">
+          <div id='scollpane' class="zui-scroll-view" zui-type="scroll-view">
+            <div class="zui-scroll-view-top-loading">
+                loading…
+            </div>
+              <div class="zui-scroll-view-main">
+                <div class='zui-scroll-view-warper'>
+                  <div class='zui-scroll-view-scroller'>
+                    <div class="zui-scroll-view-pull">
+                      pull to refresh
+                    </div>
+                    <div class="zui-scroll-view-container">
+                      <ul class="list">
+                        <li>List item 1</li>
+                        <li>List item 2</li>
+                        <li class="list-divider">List Divider</li>
+                        <li>List item 3</li>
+                        <li>List item 4</li>
+                        <li>List item 5</li>
+                        <li>List item 6</li>
+                        <li>List item 7</li>
+                        <li>List item 8</li>
+                        <li>List item 9</li>
+                        <li class="list-divider">List Divider</li>
+                        <li>List item 10</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </view>
+    </body>
+</html>

@@ -17,7 +17,8 @@ jQuery(1.8+) not tested yet
 - iOS 5+
 - Android 4+ (default browser)
 
-warn: exclude Chrome ver 18 or less
+warn: exclude Chrome ver 18 or less on Android.
+
 tested in iOS6 and Android 4.1.2
 
 ## usage
@@ -46,7 +47,7 @@ or listen to dom event of scrollObject.
 
 ### manually control
 
-    // manually hide the loading mark
+    // manually hide the loading mark (will fire the 'scrollview.finish' event.)
     scrollView.finishLoading();
 
     // manually start the loading progress (will fire the 'scrollview.pull' event.)
@@ -64,8 +65,8 @@ or listen to dom event of scrollObject.
 
 ## further
 
-    see demo
+see demo
 
 ## Lisence
 
-    this project is licensed under the terms of the MIT License.
+this project is licensed under the terms of the MIT License.

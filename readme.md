@@ -23,6 +23,37 @@ tested in iOS6 and Android 4.1.2
 
 ## usage
 
+### include `zepto.ScrollView.js` and `zepto.ScrollView.css`
+
+### include dom structure in html
+    
+    <!-- top structure of ScrollView -->
+    <div id='scroll-object' class="zui-scroll-view">
+        <div class="zui-scroll-view-top-loading">
+            <!-- show while loading -->
+            loading…
+            <!-- end -->
+        </div>
+          <div class="zui-scroll-view-main">
+            <div class='zui-scroll-view-warper'>
+              <div class='zui-scroll-view-scroller'>
+                <div class="zui-scroll-view-pull">
+                  <!-- show when pull -->
+                  pull to refresh
+                  <!-- end of your content html -->
+                </div>
+                <div class="zui-scroll-view-container">
+                  <!-- your content html here -->
+
+                  <!-- end -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- end of ScrollView structure -->
+
 ### add scrollview Object
 
     scrollView = new $.ScrollView('#scroll-object');

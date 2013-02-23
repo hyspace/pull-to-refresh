@@ -6,11 +6,17 @@ todo..
 
 ## require
 
-zepto(0.8+) 
+zepto(0.8+) recommand
 
 or
 
 jQuery(1.8+) not tested yet
+
+## feature
+
+used css `-webkit-overflow-scrolling: touch;` so it's scrolls smoother than any lib using `-webkit-transform: translate3d`
+
+support Android 4+
 
 ## broswer support
 
@@ -40,12 +46,12 @@ tested in iOS6 and Android 4.1.2
                 <div class="zui-scroll-view-pull">
                   <!-- show when pull -->
                   pull to refresh
-                  <!-- end of your content html -->
+                  <!-- end -->
                 </div>
                 <div class="zui-scroll-view-container">
                   <!-- your content html here -->
 
-                  <!-- end -->
+                  <!-- end of your content html -->
                 </div>
               </div>
             </div>
@@ -54,7 +60,7 @@ tested in iOS6 and Android 4.1.2
     </div>
     <!-- end of ScrollView structure -->
 
-### add scrollview Object
+### add scrollview Object in script
 
     scrollView = new $.ScrollView('#scroll-object');
 

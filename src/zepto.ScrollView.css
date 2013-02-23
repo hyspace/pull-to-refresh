@@ -1,0 +1,79 @@
+.zui-scroll-view {
+    height: 100%;
+    background: #fff;
+    overflow: hidden;
+}
+
+.zui-scroll-view-main {
+    height: 100%;
+    position: relative;
+    overflow-y: auto;
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-overflow-scrolling: touch;
+    -webkit-transition: -webkit-transform .5s cubic-bezier(0.33, 0.66,0.66, 1);
+}
+
+.zui-scroll-view-warper {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.zui-scroll-view-scroller {
+    min-height: 100%;
+    padding-bottom: 1px;
+    -webkit-transform: translate3d(0,0,0);
+}
+
+.top-animating .zui-scroll-view-scroller {
+    -webkit-transition: -webkit-transform .5s cubic-bezier(0.33, 0.66, 0.66,1);
+}
+
+.zui-scroll-view-scroller {
+    position: relative;
+    overflow: visible;
+}
+
+.zui-scroll-view-top-loading{
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    -webkit-user-select:none;
+}
+
+.zui-scroll-view-pull {
+    position: absolute;
+    width: 100%;
+}
+
+
+
+/*customize*/
+.zui-scroll-view {
+  background: #fff;
+}
+.zui-scroll-view-pull{
+  top: -60px;/*height:*/
+  height: 60px;/*height:*/
+  text-align: center;
+  line-height: 60px;/*height:*/
+  opacity: 0.3;
+}
+.top-activating .zui-scroll-view-pull{
+  opacity: 1;
+
+}
+.top-activated .zui-scroll-view-pull {
+  opacity: 0.3;
+}
+.zui-scroll-view-top-loading{
+  height: 60px;/*height:*/
+  background: #fff;
+  text-align: center;
+  line-height: 60px;/*height:*/
+  box-shadow: 1px 0 5px #666;
+  -webkit-transition: -webkit-transform .5s cubic-bezier(0.33, 0.66, 0.66,1);
+  -webkit-transform: translate3d(0,-60px,0);/*height:*/
+}
+.top-activated .zui-scroll-view-top-loading{
+  -webkit-transform: translate3d(0,0,0);
+}

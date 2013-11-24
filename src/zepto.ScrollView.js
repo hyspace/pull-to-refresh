@@ -89,7 +89,10 @@
                 this.listeners[i].destroy();
             }
         }
-    }, (navigator.userAgent.search('Android')!=-1) ? {
+    }, 
+    
+    // Touch Handling for Android Devices
+    (navigator.userAgent.search('Android')!=-1) ? {
         handleEvent: function(e) {
             switch (e.type) {
             case 'webkitTransitionEnd':
@@ -107,6 +110,8 @@
                 }
                 break;
             case 'touchmove':
+                e.preventDefault();
+                
                 if (!this.topActivated) {
                     if (!this.draging.isDraging && this.el.warper.scrollTop <= 0) {
                         this.draging.pre++;
@@ -118,7 +123,7 @@
                         }
                     }
                     if (this.draging.isDraging) {
-                        e.preventDefault();
+                        
                         this.draging.offset = e.touches[0].screenY - this.draging.start;
                         var rubberOffset = this.draging.offset * 0.33;
                         if (this.draging.offset <= 0) {
@@ -153,7 +158,10 @@
                 break;
             }
         }
-    } : {
+    } : 
+    
+    // Touch Handling for iOS Devices
+    {
         handleEvent: function(e) {
             switch (e.type) {
             case 'webkitTransitionEnd':
